@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :authorized, except: [:new, :create, :welcome]
 
   def new
     @user = User.new
@@ -15,7 +16,6 @@ class UsersController < ApplicationController
   end
 
   def welcome
-    byebug
     set_user
   end
 
@@ -38,7 +38,7 @@ class UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:username, :email, :password, :password_confirmation)
+    params.require(:user).permit(:name, :email, :password, :password_confirmation)
   end
 
   def set_user
