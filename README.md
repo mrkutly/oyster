@@ -5,9 +5,9 @@ Deliverables
 
 USER HOME PAGE
 * Search bar for your trips or photo albums
-* User Home page has an index of their trips.
+- User Home page has an index of their trips.
 * has index of photo albums
-* There is link to create a new trip
+- There is link to create a new trip
 
 
 TRIP SHOW PAGE

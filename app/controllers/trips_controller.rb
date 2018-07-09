@@ -1,6 +1,15 @@
 class TripsController < ApplicationController
+  before_action :authorized
 
   def create
+    byebug
+    @trip = Trip.new(trip_params)
+
+    if @trip.save
+      redirect_to trip_path(@trip)
+    else
+      redirect_to home_path(current_user)
+    end
   end
 
   def show
@@ -23,7 +32,7 @@ class TripsController < ApplicationController
 
   private
   def trip_params
-    params.require(:trips).permit(:name)
+    params.require(:trip).permit(:name, :user_id)
   end
 
   def set_trip
