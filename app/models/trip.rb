@@ -5,4 +5,7 @@ class Trip < ApplicationRecord
   has_many :trip_locations
   has_many :locations, through: :trip_locations
   has_many :journal_entries
+
+  validates :name, presence: true
+  validates :user_id, numericality: { only_integer: true }
 end

@@ -5,7 +5,11 @@ class User < ApplicationRecord
   has_many :locations, through: :trip_locations
   has_many :photo_albums, through: :trips
   has_many :photos, through: :photo_albums
+
+  # for bcrypt to create password digest
   has_secure_password
+
+  #validations for new users
   validates :email, uniqueness: true
   validates :password, length: { minimum: 6, maximum: 100 }
 end
