@@ -1,0 +1,18 @@
+<h1>Editing Trip</h1>
+
+<%= form_for @trip do |f| %>
+  <%= f.hidden_field :user_id, value: @user.id %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <br>
+  <%= f.label :description   %>
+  <%= f.text_field :description %>
+  <br>
+  <%= f.label :favorite %>
+  <%= f.check_box :favorite%>
+  <br>
+  <%= f.submit "Save Trip Name" %>
+<% end %>
+<%= form_tag "/trips/#{@trip.id}", method: :delete do %>
+   <%= submit_tag 'Delete Trip', class: "btn btn-default"%>
+<% end %>

@@ -1,1 +1,5 @@
-<%= @trip.name %>
+<h1>Welcome to <%= @trip.name %></h1>
+
+<label>Trip description</label>
+
+<h3>Edit <%= link_to @trip.name, edit_trip_path(@trip) %></h3>
