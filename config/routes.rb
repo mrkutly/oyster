@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
 
   # Users routes
-  resources :users, except: :index do
+  resources :users, except: [:index, :new] do
     #Photo Album resources
-    resources :photo_albums, except: [:index, :new]    
+    resources :photo_albums, except: [:index, :new]
   end
 
 
@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   get '/users/:id/home', to: 'users#home', as: 'home'
 
   # Sessions routes
-  get '/sessions', to: 'sessions#new', as: 'login'
+  get '/', to: 'sessions#new', as: 'login'
   post '/sessions', to: 'sessions#create', as: 'sessions'
   delete '/sessions', to: 'sessions#destroy', as: 'logout'
 

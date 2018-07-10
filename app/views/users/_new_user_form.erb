@@ -1,5 +1,3 @@
-<h1>Enter your details</h1>
-
 <%= form_for @user do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %>
@@ -13,5 +11,5 @@
   <%= f.label :password_confirmation %>
   <%= f.password_field :password_confirmation %>
   <br>
-  <%= f.submit "Create Your Account!" %>
+  <%= f.submit %>
 <% end %>
