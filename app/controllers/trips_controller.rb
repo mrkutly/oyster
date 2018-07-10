@@ -20,9 +20,7 @@ class TripsController < ApplicationController
   end
 
   def update
-    set_trip
-
-    
+    set_trips
   end
 
   def destroy

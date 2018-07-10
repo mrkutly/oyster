@@ -18,6 +18,8 @@ Rails.application.routes.draw do
   # Trips routes
   resources :trips, except: [:index, :new]
 
+  #Photo routes
+  resources :photos, only: [:new, :create]
 
 
 end
