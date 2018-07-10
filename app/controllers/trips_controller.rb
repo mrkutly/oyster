@@ -2,7 +2,6 @@ class TripsController < ApplicationController
   before_action :authorized
 
   def create
-    byebug
     @trip = Trip.new(trip_params)
 
     if @trip.save
