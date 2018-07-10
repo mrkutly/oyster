@@ -12,11 +12,7 @@ class TripsController < ApplicationController
   end
 
   def show
-    if !params[:trip].nil?
-      search_trip
-    else
-      set_trip
-    end
+    set_trip
   end
 
   def edit
@@ -25,6 +21,8 @@ class TripsController < ApplicationController
 
   def update
     set_trip
+
+    
   end
 
   def destroy
@@ -35,14 +33,10 @@ class TripsController < ApplicationController
 
   private
   def trip_params
-    params.require(:trip).permit(:name, :user_id)
+    params.require(:trip).permit(:name, :user_id, :favorite, :description)
   end
 
   def set_trip
     @trip = Trip.find(params[:id])
-  end
-
-  def search_trip
-    @trip = Trip.find_by(name: params[:trip][:name], user_id: session[:user_id])
   end
 end
