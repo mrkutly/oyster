@@ -12,7 +12,9 @@
     <%= link_to trip.name, trip_path(trip) %>
 
     <% if !trip.photos.empty? %>
-      <%= trip.photos.sample(5) %>
+      <% trip.photos.sample(5).each do |photo| %>
+        <%= image_tag photo.image_url(:thumb).to_s %>
+      <% end %>
     <% end %>
     <br>
   <% end %>
