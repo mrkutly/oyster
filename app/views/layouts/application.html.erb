@@ -8,6 +8,21 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
+  <header>
+    <div class="motto">
+      <h2>Oyster: the world is yours</h2>
+    </div>
+
+    <% if logged_in? %>
+      <div class="logout">
+        <%= button_to "Logout", logout_path, method: 'delete' %>
+      </div>
+      <% else %>
+      <div class="login">
+          <%= link_to "Login", login_path, method: 'get' %>
+      </div>
+    <% end %>
+  </header>
 
   <body>
     <%= yield %>

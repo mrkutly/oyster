@@ -3,6 +3,11 @@ Deliverables
 - User can be created
 - User can log in to their home page
 
+USER HOME PAGE
+- Search bar for your trips
+- User Home page has an index of their trips.
+- There is link to create a new trip
+
 TRIP SHOW PAGE- Tuesday
 ### Learn CarrierWave ###
 * Button to set this trip as favorite
@@ -15,11 +20,6 @@ TRIP SHOW PAGE- Tuesday
 * Shows your photo album
 * Form to upload a photo
 
-USER HOME PAGE - Wednesday
-- Search bar for your trips
-
-- User Home page has an index of their trips.
-- There is link to create a new trip
 
 
 LAYOUTS - Wednesday
