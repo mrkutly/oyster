@@ -13,7 +13,7 @@
 
     <% if !trip.photos.empty? %>
       <% trip.photos.sample(5).each do |photo| %>
-        <%= image_tag photo.image_url(:thumb).to_s %>
+        <%= image_tag photo.image_url.to_s %>
       <% end %>
     <% end %>
     <br>
