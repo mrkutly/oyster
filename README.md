@@ -11,7 +11,7 @@ USER HOME PAGE
 
 
 TRIP SHOW PAGE
-* Button to set this trip as favorite
+- Button to set this trip as favorite
 * Has a link to edit or delete it
 * Lists all of your journal_entries
 * Links to edit or delete journal entries

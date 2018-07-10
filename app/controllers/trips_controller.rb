@@ -2,7 +2,6 @@ class TripsController < ApplicationController
   before_action :authorized
 
   def create
-    byebug
     @trip = Trip.new(trip_params)
 
     if @trip.save
@@ -32,7 +31,7 @@ class TripsController < ApplicationController
 
   private
   def trip_params
-    params.require(:trip).permit(:name, :user_id)
+    params.require(:trip).permit(:name, :user_id, :favorite, :description)
   end
 
   def set_trip
