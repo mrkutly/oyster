@@ -8,14 +8,13 @@ class SessionsController < ApplicationController
 
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect_to user_path(user)
+      redirect_to home_path(user)
     else
       redirect_to login_path
     end
   end
 
   def destroy
-    byebug
     session.delete :user_id
     redirect_to login_path
   end

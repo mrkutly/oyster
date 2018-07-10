@@ -1,0 +1,19 @@
+<h1>Welcome to your home page, <%= @user.name %></h1>
+
+<h2>Create Trip:</h2>
+<%= render 'trips/new_form' %>
+
+<h2>Find a Trip:</h2>
+<%= render 'trips/search_form' %>
+
+<% if !@trips.empty? %>
+  <h2>Trips:</h2>
+  <% @trips.each do |trip| %>
+    <%= link_to trip.name, trip_path(trip) %>
+
+    <% if !trip.photos.empty? %>
+      <%= trip.photos.sample(5) %>
+    <% end %>
+    <br>
+  <% end %>
+<% end %>

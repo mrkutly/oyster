@@ -19,6 +19,12 @@ class UsersController < ApplicationController
     set_user
   end
 
+  def home
+    set_user
+    @trip = Trip.new
+    @trips = @user.trips
+  end
+
   def show
     set_user
   end

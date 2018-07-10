@@ -1,0 +1,14 @@
+<header>
+  <div class="motto">
+    <h2>Oyster: the world is yours</h2>
+  </div>
+
+  <% if logged_in? %>
+    <div class="logout">
+      <%= button_to "Logout", logout_path, method: 'delete' %>
+    </div>
+  <% end %>
+</header>
+
+
+<%= yield %>
