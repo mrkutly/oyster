@@ -1,10 +1,28 @@
 <h1>Welcome to your home page, <%= @user.name %></h1>
 
-<h2>Trips:</h2>
-<% @trips.each do |trip| %>
-  <%= link_to trip.name, trip_path(trip) %>
-  <br>
+<% if !@trips.empty? %>
+  <h2>Trips:</h2>
+  <% @trips.each do |trip| %>
+    <%= link_to trip.name, trip_path(trip) %>
+    <br>
+  <% end %>
+
+  <h2>Create Trip:</h2>
+  <%= render 'trips/new_form' %>
 <% end %>
 
-<h2>Create Trip:</h2>
-<%= render 'trips/new_form' %>
+<% if !@photo_albums.empty? %>
+
+  <h2>Photo Albums:</h2>
+
+  <% @photo_albums.each do |album| %>
+    <h3><%= album.trip.name %></h3>
+
+    <% if !album.photos.empty? %>
+      <%= link_to album.photos.first, photo_album_path(album) %>
+    <% else %>
+      <%= link_to "Add Some Photos to this album!", photo_album_path(album)%>
+    <% end %>
+
+  <% end %>
+<% end %>

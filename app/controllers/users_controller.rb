@@ -23,6 +23,7 @@ class UsersController < ApplicationController
     set_user
     @trip = Trip.new
     @trips = @user.trips
+    @photo_albums = @user.photo_albums
   end
 
   def show
