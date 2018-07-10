@@ -25,4 +25,4 @@ TRIP SHOW PAGE- Tuesday
 LAYOUTS - Wednesday
 * Home Page Layout
 * Navigation Layout
-* Application layout has a link to logout
+- Application layout has a link to logout

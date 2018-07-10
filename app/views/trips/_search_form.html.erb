@@ -1,9 +1,12 @@
 <%= form_tag "/trips/:id", method: "get" do %>
   <%= text_field_tag "trip[name]", "", list: "trips" %>
+
   <datalist id="trips">
+
     <% @trips.each do |trip| %>
       <option value="<%= trip.name %>"></option>
     <% end %>
+
   </datalist>
   <%= submit_tag "Search" %>
 <% end %>

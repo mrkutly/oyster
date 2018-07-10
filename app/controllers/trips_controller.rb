@@ -43,6 +43,6 @@ class TripsController < ApplicationController
   end
 
   def search_trip
-    @trip = Trip.find_by(name: params[:trip][:name])
+    @trip = Trip.find_by(name: params[:trip][:name], user_id: session[:user_id])
   end
 end
