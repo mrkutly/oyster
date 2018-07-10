@@ -12,7 +12,11 @@ class TripsController < ApplicationController
   end
 
   def show
-    set_trip
+    if !params[:trip].nil?
+      search_trip
+    else
+      set_trip
+    end
   end
 
   def edit
@@ -36,5 +40,9 @@ class TripsController < ApplicationController
 
   def set_trip
     @trip = Trip.find(params[:id])
+  end
+
+  def search_trip
+    @trip = Trip.find_by(name: params[:trip][:name])
   end
 end

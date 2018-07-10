@@ -16,9 +16,7 @@ TRIP SHOW PAGE- Tuesday
 * Form to upload a photo
 
 USER HOME PAGE - Wednesday
-* Search bar for your trips or photo albums
-* has index of photo albums
-
+- Search bar for your trips
 
 - User Home page has an index of their trips.
 - There is link to create a new trip
