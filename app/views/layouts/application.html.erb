@@ -1,35 +1,40 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Oyster</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<head>
+  <title>Oyster</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
-  <header>
-    <div class="motto">
-      <h2>Oyster: the world is yours</h2>
-    </div>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+<header>
+  <nav class="navbar navbar-light bg-light">
+      <a class="navbar-brand"><img src="/assets/Oyster-icon.png" width="30" height="30" class="d-inline-block align-top" alt="">
+      Oyster: the world is yours
+    </a>
+  </nav>
 
-    <% if logged_in? %>
-      <div class= "home">
-        <%= link_to "Home", home_path(current_user) %>
-      </div>
-      <div class="logout">
-        <%= button_to "Logout", logout_path, method: 'delete' %>
-      </div>
-      <% else %>
-      <div class="login">
-          <%= link_to "Login", login_path, method: 'get' %>
-      </div>
-    <% end %>
-  </header>
+  <% if logged_in? %>
+  <div class= "home">
+    <%= link_to "Home", home_path(current_user) %>
+  </div>
+  <div class="logout">
+    <%= button_to "Logout", logout_path, method: 'delete' %>
+  </div>
+  <% else %>
+  <div class="login">
+    <%= link_to "Login", login_path, method: 'get' %>
+  </div>
+  <% end %>
+</header>
 
 
 
-  <body>
-    <%= yield %>
-  </body>
+<body>
+
+
+  <%= yield %>
+
+</body>
 </html>
