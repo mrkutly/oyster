@@ -1,16 +1,21 @@
 <h1>Editing Trip</h1>
 
-<%= form_for @trip do |f| %>
+<%= form_for @trip, :html => {:class => "form-horizontal center"} do |f| %>
   <%= f.hidden_field :user_id, value: @user.id %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <br>
-  <%= f.label :description   %>
-  <%= f.text_field :description %>
-  <br>
-  <%= f.label :favorite %>
-  <%= f.check_box :favorite%>
-  <br>
-  <%= f.submit %>
+  <div class="form-row align-items-center">
+    <div class="col-auto">
+      <%= f.text_field :name, class: "form-control mb-2", placeholder: "Trip Name"%>
+    </div>
+    <div class="col-auto">
+      <%= f.text_field :description, class: "form-control mb-2", placeholder: "Trip Description" %>
+    </div>
+    <div class="col-auto">
+      <%= f.check_box :favorite, class: "form-check-label", id: "autoSizingCheck" %>
+      <%= f.label "Favorite", class: "col-md-4 control-label" %>
+    </div>
+    <div class="col-auto">
+      <%= f.submit "Save Trip", class: "btn btn-default btn-primary" %>
+    </div>
+  </div>
 <% end %>
-<%= button_to "Delete", delete_trip_path(@trip), method: :delete, data: { confirm: "Are you sure?" } %>
+<%= button_to "Delete Trip", delete_trip_path(@trip), method: :delete, class: "btn btn-danger", data: { confirm: "Are you sure?" } %>
