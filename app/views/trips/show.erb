@@ -3,3 +3,18 @@
 <label>Trip description</label>
 
 <h3>Edit <%= link_to @trip.name, edit_trip_path(@trip) %></h3>
+
+<h3>New Journal Entry</h3>
+<%= render "journal_entries/new_form" %>
+
+<h3>Journal</h3>
+<% @journal_entries.each do |journal_entry| %>
+  <h4><%= link_to journal_entry.title, journal_entry_path(journal_entry) %></h4>
+<% end %>
+
+
+<%= link_to "Photo Album", photo_album_path(@photo_album) %>
+
+<% @photos.each do |photo| %>
+  <%= image_tag photo.image.thumb.url %>
+<% end %>
