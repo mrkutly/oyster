@@ -21,6 +21,6 @@ Rails.application.routes.draw do
   resources :photos, only: [:new, :create, :show]
 
   #journal entries routes
-  resource :journal_entries, only: [:new, :create]
+  resource :journal_entries, only: [:index, :create]
   get '/journal_entries/:id', to: 'journal_entries#show', as: 'journal_entry'
 end

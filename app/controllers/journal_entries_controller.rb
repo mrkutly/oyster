@@ -1,13 +1,10 @@
 class JournalEntriesController < ApplicationController
-  def new
-    @journal_entry = JournalEntry.new
-  end
 
   def create
     @journal_entry = JournalEntry.new(journal_entry_params)
 
     if @journal_entry.save
-      redirect_to journal_entry_path(@journal_entry)
+      redirect_to trip_path(@journal_entry.trip)
     else
       render :new
     end
@@ -15,6 +12,7 @@ class JournalEntriesController < ApplicationController
 
   def show
     set_journal_entry
+    @trip = @journal_entry.trip
   end
 
   private
