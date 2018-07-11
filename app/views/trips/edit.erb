@@ -13,6 +13,4 @@
   <br>
   <%= f.submit %>
 <% end %>
-<%= form_tag "/trips/#{@trip.id}", method: :delete do %>
-   <%= submit_tag 'Delete Trip', class: "btn btn-default"%>
-<% end %>
+<%= button_to "Delete", delete_trip_path(@trip), method: :delete, data: { confirm: "Are you sure?" } %>

@@ -12,7 +12,8 @@ Rails.application.routes.draw do
   delete '/sessions', to: 'sessions#destroy', as: 'logout'
 
   # Trips routes
-  resources :trips, except: [:index, :new]
+  resources :trips, except: [:index, :new, :destroy]
+  delete 'trips/:id', to: 'trips#destroy', as: 'delete_trip'
 
   #Photo Album resources
   resources :photo_albums, only: [:show, :create]

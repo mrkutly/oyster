@@ -7,16 +7,23 @@
 <h3>New Journal Entry</h3>
 <%= render "journal_entries/new_form" %>
 
-<h3>Journal</h3>
-<% @journal_entries.each do |journal_entry| %>
-  <h4><%= link_to journal_entry.title, journal_entry_path(journal_entry) %></h4>
+<% if !@trip.journal_entries.empty? %>
+
+  <h3>Journal</h3>
+  <% @journal_entries.each do |journal_entry| %>
+    <h4><%= link_to journal_entry.title, journal_entry_path(journal_entry) %></h4>
+  <% end %>
+
 <% end %>
 
+<% if !@trip.photo_album.nil? %>
+  <%= link_to "Photo Album", photo_album_path(@photo_album) %>
 
-<%= link_to "Photo Album", photo_album_path(@photo_album) %>
-
-<% @photos.each do |photo| %>
-  <a href="<%= photo_path(photo) %>">
-    <%= image_tag photo.image.thumb.url %>
-  </a>
+  <% @photos.each do |photo| %>
+    <a href="<%= photo_path(photo) %>">
+      <%= image_tag photo.image.thumb.url %>
+    </a>
+  <% end %>
+<% else %>
+  <!-- <%#= link_to "Start your photo album"  %> -->
 <% end %>
