@@ -1,6 +1,4 @@
-<h1>Welcome to <%= @trip.name %></h1>
-
-<label>Trip description</label>
+<h1><%= @trip.name %></h1>
 
 <h3>Edit <%= link_to @trip.name, edit_trip_path(@trip) %></h3>
 
@@ -28,5 +26,5 @@
   <%= form_for @photo_album do |f| %>
     <%= f.hidden_field :trip_id, value: @trip.id %>
     <%= f.submit "Start a photo album" %>
-  <% end %>  
+  <% end %>
 <% end %>

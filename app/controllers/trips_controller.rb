@@ -34,8 +34,13 @@ class TripsController < ApplicationController
   end
 
   def update
-    set_trips
-    #some code here to update trip
+    set_trip
+
+    if @trip.update(trip_params)
+      redirect_to trip_path(@trip)
+    else
+      render :edit
+    end 
   end
 
   def destroy
