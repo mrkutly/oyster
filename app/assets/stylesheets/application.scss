@@ -14,19 +14,32 @@
  // Custom bootstrap variables must be set or imported *before* bootstrap.
  @import "bootstrap";
 
+ $purple: #7e7ebf;
+ $light-purple: #cfcfea;
+
 .login, .sign-up{
-  margin: 0 auto;
-  width: 400px;
+  float: left;
+  width: 40%;
 }
 
 .welcome-banner {
-  color: #4a7682;
+  font-family: "Times New Roman", Times, serif;
+  color: white;
   text-align: center;
-  background-color: #cfcfff;
-  margin-left: 100px;
-  margin-right: 100px;
+  background-color: $purple;
+  margin: 30px 100px;
   border-style: solid;
-  border-color: #40596f;
+  border-color: black;
+}
+
+.welcome-text {
+  padding: 20px;
+  background-color: black;
+  margin: 10px 250px;
+  width: auto;
+  border-style: solid;
+  border-radius: 2%;
+  border-color: white;
 }
 
 .glowing {
@@ -34,8 +47,8 @@
 }
 
 .btn-purple {
-  background-color: #cfcfff;
+  background-color: $purple;
   border-style: solid;
-  border-color: #40596f;
-  color: #40596f;
+  border-color: $light-purple;
+  color: white;
 }

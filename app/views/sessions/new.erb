@@ -1,19 +1,18 @@
 <div class="jumbotron welcome-banner">
-    <h1 class="glowing">Welcome to Oyster</h1>
+    <h1 class="welcome-text">Welcome to Oyster</h1>
 </div>
 
+<div class="container">
+  <div class="row">
 
-<div class="container login">
-  <%= form_tag sessions_path do %>
-    <%= label_tag :email, 'Email'%>
-    <%= text_field_tag :email, params[:email], class: 'form-control', autofocus: true %>
 
-    <%= label_tag :password, 'Password'%>
-    <%= password_field_tag :password, nil, class: 'form-control' %>
-    <%= submit_tag "Login", class: 'btn btn-purple' %>
-  <% end %>
-</div>
+    <div class="login col-md">
+      <%= render 'login_form' %>
+    </div>
 
-<div class="container sign-up">
-  <%= render 'users/new_user_form' %>
+    <div class="sign-up col-md">
+      <%= render 'users/new_user_form' %>
+    </div>
+
+  </div>
 </div>
