@@ -39,10 +39,10 @@ ActiveRecord::Schema.define(version: 2018_07_11_183120) do
 
   create_table "photos", force: :cascade do |t|
     t.integer "photo_album_id"
-    t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "description"
+    t.string "image"
   end
 
   create_table "trips", force: :cascade do |t|

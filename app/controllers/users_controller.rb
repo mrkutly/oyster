@@ -11,11 +11,8 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
       redirect_to welcome_path(@user)
     else
-<<<<<<< HEAD
-      render "users/_new_user_form"
-=======
       render 'users/_new_user_form'
->>>>>>> feat/css-user
+
     end
   end
 
