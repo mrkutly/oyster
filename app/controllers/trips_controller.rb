@@ -17,10 +17,11 @@ class TripsController < ApplicationController
     else
       set_trip
     end
-    @photo_album = @trip.photo_album
-    @photos = @trip.photos
-    @journal_entry = JournalEntry.new
-    @journal_entries = JournalEntry.where(trip_id: @trip.id)
+      set_show
+
+    if @photo_album.nil?
+      @photo_album = PhotoAlbum.new
+    end
   end
 
   def edit
@@ -49,5 +50,12 @@ class TripsController < ApplicationController
 
   def search_trip
     @trip = Trip.find_by(name: params[:trip][:name])
+  end
+
+  def set_show
+    @photo_album = @trip.photo_album
+    @photos = @trip.photos
+    @journal_entry = JournalEntry.new
+    @journal_entries = JournalEntry.where(trip_id: @trip.id)
   end
 end

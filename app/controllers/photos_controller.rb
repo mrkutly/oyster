@@ -15,7 +15,8 @@ class PhotosController < ApplicationController
     if @photo.save
       redirect_to photo_album_path(@photo.photo_album)
     else
-      render :new
+      @photo_album = PhotoAlbum.find(photo_params[:photo_album_id])
+      render "photos/_new_form"
     end
   end
 
@@ -32,6 +33,6 @@ class PhotosController < ApplicationController
   end
 
   def photo_params
-    params.require(:photo).permit(:image, :description, :location_id, :photo_album_id)
+    params.require(:photo).permit(:image, :description, :photo_album_id)
   end
 end

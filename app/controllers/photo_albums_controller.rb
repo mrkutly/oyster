@@ -5,7 +5,13 @@ class PhotoAlbumsController < ApplicationController
   end
 
   def create
-    @photo_album.new(photo_album_params)
+    byebug
+    @photo_album = PhotoAlbum.new(photo_album_params)
+
+    if @photo_album.save
+      redirect_to photo_album_path(@photo_album)
+    end
+    #something here for errors?
   end
 
   private

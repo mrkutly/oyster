@@ -25,5 +25,8 @@
     </a>
   <% end %>
 <% else %>
-  <!-- <%#= link_to "Start your photo album"  %> -->
+  <%= form_for @photo_album do |f| %>
+    <%= f.hidden_field :trip_id, value: @trip.id %>
+    <%= f.submit "Start a photo album" %>
+  <% end %>  
 <% end %>

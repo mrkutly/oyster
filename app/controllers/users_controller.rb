@@ -7,12 +7,11 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    byebug
     if @user.save
       session[:user_id] = @user.id
       redirect_to welcome_path(@user)
     else
-      render :new
+      render "users/_new_user_form"
     end
   end
 
