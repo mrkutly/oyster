@@ -13,3 +13,29 @@
  */
  // Custom bootstrap variables must be set or imported *before* bootstrap.
  @import "bootstrap";
+
+.login, .sign-up{
+  margin: 0 auto;
+  width: 400px;
+}
+
+.welcome-banner {
+  color: #4a7682;
+  text-align: center;
+  background-color: #cfcfff;
+  margin-left: 100px;
+  margin-right: 100px;
+  border-style: solid;
+  border-color: #40596f;
+}
+
+.glowing {
+  text-shadow: 2px 2px 5px white;
+}
+
+.btn-purple {
+  background-color: #cfcfff;
+  border-style: solid;
+  border-color: #40596f;
+  color: #40596f;
+}
