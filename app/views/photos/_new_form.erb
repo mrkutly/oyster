@@ -5,9 +5,6 @@
   <%= f.label :description %>
   <%= f.text_field :description %>
   <br>
-  <%= f.label :location_id %>
-  <%= f.number_field :location_id %>
-  <br>
   <%= f.hidden_field :photo_album_id, value: @photo_album.id %>
   <%= f.submit "Upload" %>
 <% end %>
