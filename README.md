@@ -26,3 +26,7 @@ LAYOUTS - Wednesday
 * Home Page Layout
 * Navigation Layout
 - Application layout has a link to logout
+
+TO DO:
+* create journals and journal_entries
+* create locations and trip_locations

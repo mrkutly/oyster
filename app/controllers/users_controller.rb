@@ -41,6 +41,7 @@ class UsersController < ApplicationController
 
   def update
     set_user
+    #some code here to update user
   end
 
   private
