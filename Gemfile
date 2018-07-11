@@ -12,9 +12,9 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'carrierwave', '~> 1.0'
+gem 'mini_magick', '4.8.0'
 gem 'bcrypt'
 gem 'pg'
-gem "aws-sdk-s3", require: false
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

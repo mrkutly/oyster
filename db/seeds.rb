@@ -5,3 +5,5 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+PhotoAlbum.create(name: "My Trip", trip_id: 9)
+Location.create(city: "Krakow", country: "Poland", name: "Pizza Garden")
