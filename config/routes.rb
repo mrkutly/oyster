@@ -1,10 +1,7 @@
 Rails.application.routes.draw do
 
   # Users routes
-  resources :users, except: [:index, :new] do
-    #Photo Album resources
-    resources :photo_albums, except: [:index, :new]
-  end
+  resources :users, except: [:index, :new]
 
   get '/users/:id/welcome', to: 'users#welcome', as: 'welcome'
   get '/users/:id/home', to: 'users#home', as: 'home'
@@ -17,8 +14,13 @@ Rails.application.routes.draw do
   # Trips routes
   resources :trips, except: [:index, :new]
 
+  #Photo Album resources
+  resources :photo_albums, except: [:index, :new]
+
   #Photo routes
   resources :photos, only: [:new, :create, :show]
 
-
+  #journal entries routes
+  resource :journal_entries, only: [:new, :create]
+  get '/journal_entries/:id', to: 'journal_entries#show', as: 'journal_entry'
 end
