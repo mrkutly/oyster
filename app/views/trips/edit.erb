@@ -11,7 +11,7 @@
   <%= f.label :favorite %>
   <%= f.check_box :favorite%>
   <br>
-  <%= f.submit "Save Trip Name" %>
+  <%= f.submit %>
 <% end %>
 <%= form_tag "/trips/#{@trip.id}", method: :delete do %>
    <%= submit_tag 'Delete Trip', class: "btn btn-default"%>
