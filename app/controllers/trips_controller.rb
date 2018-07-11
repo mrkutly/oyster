@@ -17,10 +17,15 @@ class TripsController < ApplicationController
     else
       set_trip
     end
+
+    if @trip.nil?
+      redirect_to home_path(current_user)
+    else
       set_show
 
-    if @photo_album.nil?
-      @photo_album = PhotoAlbum.new
+      if @photo_album.nil?
+        @photo_album = PhotoAlbum.new
+      end
     end
   end
 
