@@ -2,3 +2,5 @@
 
 <h1><%= @journal_entry.title %></h1>
 <p><%= @journal_entry.content %></p>
+
+<%= button_to "Delete", delete_journal_entry_path(@journal_entry), method: :delete, data: { confirm: "Are you sure?" } %>

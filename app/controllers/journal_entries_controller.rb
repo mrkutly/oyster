@@ -15,6 +15,13 @@ class JournalEntriesController < ApplicationController
     @trip = @journal_entry.trip
   end
 
+  def destroy
+    set_journal_entry
+    trip = @journal_entry.trip
+    @journal_entry.destroy
+    redirect_to trip_path(trip)
+  end
+
   private
   def journal_entry_params
     params.require(:journal_entry).permit(:title, :content, :trip_id, :location_id)

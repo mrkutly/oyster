@@ -16,5 +16,7 @@
 <%= link_to "Photo Album", photo_album_path(@photo_album) %>
 
 <% @photos.each do |photo| %>
-  <%= image_tag photo.image.thumb.url %>
+  <a href="<%= photo_path(photo) %>">
+    <%= image_tag photo.image.thumb.url %>
+  </a>
 <% end %>
