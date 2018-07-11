@@ -1,18 +1,22 @@
-<%= form_for @user do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <br>
-  <%= f.label :email %>
-  <%= f.text_field :email %>
-  <br>
-  <%= f.label :password %>
-  <%= f.password_field :password %>
-  <br>
-  <%= f.label :password_confirmation %>
-  <%= f.password_field :password_confirmation %>
-  <br>
-  <%= f.label :avatar %>
-  <%= f.file_field :avatar %>
-  <br>
-  <%= f.submit %>
+<h3>Sign up:</h3>
+
+<%= form_for @user, :html => {:class => "form-horizontal center"} do |f| %>
+  <div class="form-group">
+    <%= f.label :name, "Name:", class: "col-md-4 control-label"%>
+    <%= f.text_field :name, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :email, "Email:", class: "col-md-4 control-label"%>
+    <%= f.text_field :email, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :password, "Password:", class: "col-md-4 control-label"%>
+    <%= f.password_field :password, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :password_confirmation, "Password Confitrmation:", class: "col-md-4 control-label"%>
+    <%= f.password_field :password_confirmation, class: "form-control" %>
+  </div>
+
+  <%= f.submit "Submit", class: "btn btn-default btn-primary" %>
 <% end %>

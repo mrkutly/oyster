@@ -1,19 +1,12 @@
+
 <nav class="navbar navbar-light bg-light">
-    <a class="navbar-brand"><img src="/assets/Oyster-icon.png" width="30" height="30" class="d-inline-block align-top" alt="">
-    Oyster: the world is yours
-  </a>
+  <%= form_tag sessions_path do %>
+    <%= label_tag :email, 'Email'%>
+    <%= text_field_tag :email, params[:email], class: 'form-control', autofocus: true %>
+
+    <%= label_tag :password, 'Password'%>
+    <%= password_field_tag :password, nil, class: 'form-control' %>
+  <%= submit_tag "Login", class: 'btn btn-default btn-lg btn-submit' %>
+  <% end %>
 </nav>
-<%= form_tag sessions_path do %>
-  <%= label_tag "Email" %>
-  <%= text_field_tag :email %>
-  <br>
-  <%= label_tag "Password" %>
-  <%= password_field_tag :password %>
-  <br>
-  <%= submit_tag "Login" %>
-<% end %>
-
-<br>
-
-Sign up:
 <%= render 'users/new_user_form' %>
