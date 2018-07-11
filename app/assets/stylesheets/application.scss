@@ -19,10 +19,17 @@
 
 .login, .sign-up{
   float: left;
-  width: 40%;
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
+.login {
+  margin-top: 50px;
 }
 
 .welcome-banner {
+  padding: 80px;
+  min-width: 800px;
   font-family: "Times New Roman", Times, serif;
   color: white;
   text-align: center;
@@ -33,10 +40,10 @@
 }
 
 .welcome-text {
+  min-width: 200px;
   padding: 20px;
   background-color: black;
-  margin: 10px 250px;
-  width: auto;
+  margin: 0 auto;
   border-style: solid;
   border-radius: 2%;
   border-color: white;
@@ -51,4 +58,18 @@
   border-style: solid;
   border-color: $light-purple;
   color: white;
+}
+
+.border-between > [class*='col-']:before {
+   background: $purple;
+   bottom: 0;
+   content: " ";
+   left: 0;
+   position: absolute;
+   width: 2px;
+   top: 0;
+}
+
+.border-between > [class*='col-']:first-child:before {
+   display: none;
 }
