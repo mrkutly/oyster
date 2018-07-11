@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   resources :trips, except: [:index, :new]
 
   #Photo Album resources
-  resources :photo_albums, except: [:index, :new]
+  resources :photo_albums, only: [:show, :create]
 
   #Photo routes
   resources :photos, only: [:new, :create, :show]
