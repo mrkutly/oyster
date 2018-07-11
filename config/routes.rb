@@ -19,6 +19,7 @@ Rails.application.routes.draw do
 
   #Photo routes
   resources :photos, only: [:new, :create, :show]
+  delete 'photos/:id', to: 'photos#destroy', as: "delete_photo"
 
   #journal entries routes
   resource :journal_entries, only: [:index, :create]
