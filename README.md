@@ -10,15 +10,14 @@ USER HOME PAGE
 
 TRIP SHOW PAGE- Tuesday
 ### Learn CarrierWave ###
-* Button to set this trip as favorite
-* Has a link to edit or delete it
-* Lists all of your journal_entries
-* Links to edit or delete journal entries
-* Form for a new journal entry
-* List all locations (STRETCH GOAL google maps api map of locations)
+- Button to set this trip as favorite
+- Has a link to edit or delete it
+- Lists all of your journal_entries
+- Links to edit or delete journal entries
+- Form for a new journal entry
 
-* Shows your photo album
-* Form to upload a photo
+- Shows your photo album
+- Form to upload a photo
 
 
 
@@ -26,7 +25,3 @@ LAYOUTS - Wednesday
 * Home Page Layout
 * Navigation Layout
 - Application layout has a link to logout
-
-TO DO:
-* create journals and journal_entries
-* create locations and trip_locations

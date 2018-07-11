@@ -22,6 +22,17 @@ class JournalEntriesController < ApplicationController
     redirect_to trip_path(trip)
   end
 
+  def edit
+    set_journal_entry
+    @trip = @journal_entry.trip
+  end
+
+  def update
+    set_journal_entry
+    @journal_entry.update(journal_entry_params)
+    redirect_to journal_entry_path(@journal_entry)
+  end
+
   private
   def journal_entry_params
     params.require(:journal_entry).permit(:title, :content, :trip_id, :location_id)

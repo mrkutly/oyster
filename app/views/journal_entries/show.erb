@@ -4,3 +4,4 @@
 <p><%= @journal_entry.content %></p>
 
 <%= button_to "Delete", delete_journal_entry_path(@journal_entry), method: :delete, data: { confirm: "Are you sure?" } %>
+<%= link_to "Edit", edit_journal_entry_path(@journal_entry) %>
