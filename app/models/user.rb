@@ -9,6 +9,10 @@ class User < ApplicationRecord
   # for bcrypt to create password digest
   has_secure_password
 
+  # for user avatar image
+  has_one_attached :avatar
+
+
   #validations for new users
   validates :email, uniqueness: true
   validates :password, length: { minimum: 6, maximum: 100 }
