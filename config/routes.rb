@@ -24,4 +24,5 @@ Rails.application.routes.draw do
   #journal entries routes
   resource :journal_entries, only: [:index, :create]
   get '/journal_entries/:id', to: 'journal_entries#show', as: 'journal_entry'
+  delete 'journal_entries/:id', to: 'journal_entries#destroy', as: "delete_journal_entry"
 end
