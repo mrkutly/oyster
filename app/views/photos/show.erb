@@ -1,3 +1,17 @@
-<%= link_to "Back to album", photo_album_path(@photo.photo_album) %>
-<%= image_tag @photo.image.url %>
-<%= button_to "Delete", delete_photo_path(@photo), method: :delete, data: { confirm: "Are you sure?" }  %>
+<div class="container top-margin bottom-margin">
+
+  <h6><%= link_to "Back to album", photo_album_path(@photo.photo_album), class: "purple-link" %></h6>
+
+  <hr class="my-4">
+
+  <div class="bottom-margin-small">
+    <%= image_tag @photo.image.url, class: "photo-show photo-frame" %>
+  </div>
+
+  <h5><%= @photo.description %></h5>
+
+  <hr class="my-4">
+
+  <h6><%= button_to "Delete", delete_photo_path(@photo), method: :delete, data: { confirm: "Are you sure?" }, class: "btn-purple"  %></h6>
+
+</div>

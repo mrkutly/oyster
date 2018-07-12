@@ -112,6 +112,19 @@ body {
   box-shadow: 7px 7px 10px $purple;
 }
 
+.photo-frame {
+  border-style: solid;
+  border-width: 2px;
+  border-color: $light-purple;
+  padding: 2px;
+}
+
+.photo-show {
+  max-width: 1100px;
+  max-height: 980px;
+  margin: 0 auto;
+}
+
 .purple-link {
   color: $purple;
 }
