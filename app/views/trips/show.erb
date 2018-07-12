@@ -1,30 +1,50 @@
-<h1><%= @trip.name %></h1>
+<div class="container top-margin bottom-margin">
+  <h1><%= @trip.name %></h1>
 
-<h3>Edit <%= link_to @trip.name, edit_trip_path(@trip) %></h3>
+  <h6><%= link_to "Edit", edit_trip_path(@trip), class: "purple-link" %></h6>
 
-<h3>New Journal Entry</h3>
-<%= render "journal_entries/new_form" %>
+  <div class="row">
+    <div class="col-lg-6">
+      <h3 class="top-margin">New Journal Entry</h3>
+      <%= render "journal_entries/new_form" %>
+    </div>
 
-<% if !@trip.journal_entries.empty? %>
+    <% if !@trip.journal_entries.empty? %>
+      <div class="col-lg-6">
 
-  <h3>Journal</h3>
-  <% @journal_entries.each do |journal_entry| %>
-    <h4><%= link_to journal_entry.title, journal_entry_path(journal_entry) %></h4>
+
+        <h3 class="top-margin">Journal</h3>
+
+          <% @journal_entries.each do |journal_entry| %>
+            <h6><%= link_to journal_entry.title, journal_entry_path(journal_entry), class: "purple-link" %></h6>
+          <% end %>
+      </div>
+    <% end %>
+  </div>
+
+
+  <% if !@trip.photo_album.nil? %>
+    <h3 class="top-margin"><%= link_to "Photo Album", photo_album_path(@photo_album), class: "purple-link" %></h3>
+
+    <div class="row">
+      <% @photos.each do |photo| %>
+
+        <div class="col-lg-4 top-margin">
+          <a href="<%= photo_path(photo) %>">
+            <%= image_tag photo.image.thumb.url, class: "photo-display" %>
+          </a>
+        </div>
+      <% end %>
+    </div>
+
+  <% else %>
+
+    <div class="top-margin">
+      <%= form_for @photo_album do |f| %>
+        <%= f.hidden_field :trip_id, value: @trip.id %>
+        <%= f.submit "Start a photo album", class: "btn-purple" %>
+      <% end %>
+    </div>
+
   <% end %>
-
-<% end %>
-
-<% if !@trip.photo_album.nil? %>
-  <%= link_to "Photo Album", photo_album_path(@photo_album) %>
-
-  <% @photos.each do |photo| %>
-    <a href="<%= photo_path(photo) %>">
-      <%= image_tag photo.image.thumb.url %>
-    </a>
-  <% end %>
-<% else %>
-  <%= form_for @photo_album do |f| %>
-    <%= f.hidden_field :trip_id, value: @trip.id %>
-    <%= f.submit "Start a photo album" %>
-  <% end %>
-<% end %>
+</div>
