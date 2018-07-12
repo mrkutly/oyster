@@ -7,6 +7,7 @@ class TripsController < ApplicationController
     if @trip.save
       redirect_to trip_path(@trip)
     else
+      flash[:new_trip_notice] = "Please fill in all fields"
       redirect_to home_path(current_user)
     end
   end
@@ -19,6 +20,7 @@ class TripsController < ApplicationController
     end
 
     if @trip.nil?
+      flash[:search_notice] = "Could not a trip by that name"
       redirect_to home_path(current_user)
     else
       set_show
@@ -40,7 +42,7 @@ class TripsController < ApplicationController
       redirect_to trip_path(@trip)
     else
       render :edit
-    end 
+    end
   end
 
   def destroy

@@ -11,6 +11,7 @@ class PhotosController < ApplicationController
     if @photo.save
       @photo.store_image!
     else
+      flash[:notice] = "Uh oh! You forgot something"
       @photo_album = PhotoAlbum.find(photo_params[:photo_album_id])
     end
     redirect_to photo_album_path(@photo.photo_album)

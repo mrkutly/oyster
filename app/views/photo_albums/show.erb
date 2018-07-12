@@ -7,6 +7,9 @@
 
   <div class="top-margin bottom-margin-small">
     <h2 class="bottom-margin-small">Add a photo:</h2>
+    <% if flash[:notice] %>
+      <div class="alert flash"><%= flash[:notice] %></div>
+    <% end %>
     <%= render "photos/new_form" %>
   </div>
 

@@ -1,13 +1,14 @@
 class JournalEntriesController < ApplicationController
   before_action :authorized
-  
+
   def create
     @journal_entry = JournalEntry.new(journal_entry_params)
 
     if @journal_entry.save
       redirect_to trip_path(@journal_entry.trip)
     else
-      render :new
+      flash[:notice] = "Uh oh! You forgot something"
+      redirect_to trip_path(journal_entry_params[:trip_id])
     end
   end
 

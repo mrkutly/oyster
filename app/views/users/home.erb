@@ -7,11 +7,20 @@
 
   <div class="col-lg-6">
     <h2>Create Trip:</h2>
+
+    <% if flash[:new_trip_notice] %>
+      <div class="alert flash"><%= flash[:new_trip_notice] %></div>
+    <% end %>
+
     <%= render 'trips/new_form' %>
   </div>
 
   <div class="col-lg-6">
     <h2>Find a Trip:</h2>
+
+    <% if flash[:search_notice] %>
+      <div class="alert flash"><%= flash[:search_notice] %></div>
+    <% end %>
 
     <div class="top-margin-x-small">
       <%= render 'trips/search_form' %>
