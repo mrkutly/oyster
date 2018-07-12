@@ -24,8 +24,8 @@ header {
 }
 
 body {
-    font-family: monospace;
-    background-color: $light-gray
+  font-family: monospace;
+  background-color: $light-gray;
 }
 
 .bg-light {
@@ -166,7 +166,7 @@ body {
   margin: 0 auto;
   border-style: solid;
   border-radius: 2%;
-    border-color: white;
+  border-color: white;
 }
 
 .welcome-text h1 {
@@ -179,6 +179,7 @@ body {
   float: left;
   padding-left: 100px;
   padding-right: 100px;
+}
 
 .glowing {
   text-shadow: 2px 2px 5px white;
@@ -202,9 +203,5 @@ body {
 }
 
 .navbar-light .navbar-brand {
-  color: $dark-purple
-}
-
-.search-form {
-
+  color: $dark-purple;
 }
