@@ -10,14 +10,13 @@ class PhotosController < ApplicationController
 
   def create
     @photo = Photo.new(photo_params)
-    @photo.store_image!
 
     if @photo.save
-      redirect_to photo_album_path(@photo.photo_album)
+      @photo.store_image!
     else
       @photo_album = PhotoAlbum.find(photo_params[:photo_album_id])
-      render "photos/_new_form"
     end
+    redirect_to photo_album_path(@photo.photo_album)
   end
 
   def destroy
