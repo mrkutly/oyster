@@ -1,29 +1,31 @@
 /*
-* This is a manifest file that'll be compiled into application.css, which will include all the files
-* listed below.
-*
-* Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
-* vendor/assets/stylesheets directory can be referenced here using a relative path.
-*
-* You're free to add application-wide styles to this file and they'll appear at the bottom of the
-* compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
-* files in this directory. Styles in this file should be added after the last require_* statement.
-* It is generally better to create a new file per style scope.
-*
-*/
-// Custom bootstrap variables must be set or imported *before* bootstrap.
-@import "bootstrap";
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ */
+ // Custom bootstrap variables must be set or imported *before* bootstrap.
+ @import "bootstrap";
 
-$dark-purple: #59597b;
-$purple: #7e7ebf;
-$light-purple: #cfcfea;
+  $dark-purple: #59597b;
+  $purple: #7e7ebf;
+  $light-purple: #cfcfea;
+  $light-gray: #b4b2ce4f;
 
 header {
   border-bottom: 2px solid $light-purple;
 }
 
 body {
-  font-family: monospace;
+    font-family: monospace;
+    background-color: $light-gray
 }
 
 .bg-light {
@@ -164,8 +166,32 @@ body {
   float: left;
   padding-left: 100px;
   padding-right: 100px;
+
+.glowing {
+  text-shadow: 2px 2px 5px white;
+}
+
+.btn-purple {
+  background-color: $purple;
+  border-style: solid;
+  border-color: $light-purple;
+  color: white;
+}
+
+.border-between > [class*='col-']:before {
+  background: $purple;
+  bottom: 0;
+  content: " ";
+  left: 0;
+  position: absolute;
+  width: 2px;
+  top: 0;
 }
 
 .navbar-light .navbar-brand {
   color: $dark-purple
+}
+
+.search-form {
+
 }
