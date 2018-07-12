@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   # Users routes
   resources :users, except: [:index, :new]
 
+  get '/users', to: 'sessions#new'
   get '/users/:id/welcome', to: 'users#welcome', as: 'welcome'
   get '/users/:id/home', to: 'users#home', as: 'home'
 

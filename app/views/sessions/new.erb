@@ -10,10 +10,17 @@
 
 
     <div class="login col-md-6">
-      <%= render 'login_form' %>
+      <%= render 'sessions/login_form' %>
     </div>
 
     <div class="sign-up col-md-6">
+      <% if @user.errors.any? %>
+        <ul>  
+          <% @user.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      <% end %>
       <%= render 'users/new_user_form' %>
     </div>
 
