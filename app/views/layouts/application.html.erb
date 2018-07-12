@@ -12,22 +12,22 @@
     <nav class="navbar navbar-light bg-light">
 
         <a class="navbar-brand purple-link" href="<%= home_path(current_user) if logged_in? %>" >
-          <img src="/assets/Oyster-icon.png" width="30" height="30" class="d-inline-block align-top" alt="Oyster logo">
-          Oyster: the world is yours
+          <img src="/assets/Oyster-icon.png" width="60" height="60" class="d-inline-block align-top float right-margin" alt="Oyster logo">
+          <h2 class="top-margin-x-small">Oyster: the world is yours</h2>
         </a>
 
-        <div class="btn-purple">
+        <div class="btn-purple right-margin">
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
         </div>
-        
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-          <div class="navbar-nav">
 
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+
+          <div class="navbar-nav top-margin-x-small right-margin">
               <% if logged_in? %>
-                  <h6><%= link_to "Home", home_path(current_user), class: "nav-item nav-link" %></h6>
-                  <h6><%= link_to "Logout", logout_path, method: 'delete', class: 'nav-item nav-link' %></h6>
+                  <h6><%= link_to "Home", home_path(current_user), class: "nav-item nav-link purple-link" %></h6>
+                  <h6><%= link_to "Logout", logout_path, method: 'delete', class: 'nav-item nav-link purple-link' %></h6>
               <% else %>
                 <h6><%= link_to "Login", login_path, method: 'get', class: "nav-item nav-link" %></h6>
               <% end %>
