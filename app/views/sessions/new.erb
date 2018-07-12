@@ -17,7 +17,7 @@
 
       <div class="sign-up col-md-6">
         <% if @user.errors.any? %>
-          <ul>
+          <ul class="alert alert-warning">
             <% @user.errors.full_messages.each do |message| %>
               <li><%= message %></li>
             <% end %>
