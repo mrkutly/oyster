@@ -1,17 +1,13 @@
-<div class="search-form">
+
+
   <%= form_tag "/trips/:id", method: "get" do %>
-  <div class="form-row align-items-center">
-    <div class="col-auto">
-      <%= text_field_tag "trip[name]", "", list: "trips", class: "form-control mb-2" %>
-    </div>
-    <datalist id="trips">
-      <% @trips.each do |trip| %>
-        <option value="<%= trip.name %>"></option>
-      <% end %>
-    </datalist>
-    <div class="col-auto">
-      <%= submit_tag "Go", class: "btn btn-default btn-primary" %>
-    </div>
-  </div>
+      <%= text_field_tag "trip[name]", "", list: "trips", class: "search-bar" %>
+
+      <datalist id="trips">
+        <% @trips.each do |trip| %>
+          <option value="<%= trip.name %>"></option>
+        <% end %>
+      </datalist>
+
+    <%= submit_tag "Go", class: "btn btn-purple" %>
   <% end %>
-</div>

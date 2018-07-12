@@ -138,12 +138,23 @@ body {
   margin-right: 20px;
 }
 
+.search-bar {
+  display: block;
+  float: left;
+  margin: 1.5px 10px;
+  height: 2.7em;
+}
+
 .show-journal-content {
   font-size: 1.2em;
 }
 
 .top-margin {
   margin-top: 30px;
+}
+
+.top-margin-x-small {
+  margin-top: 12px;
 }
 
 .welcome-banner {
@@ -178,17 +189,6 @@ body {
   float: left;
   padding-left: 100px;
   padding-right: 100px;
-}
-
-.glowing {
-  text-shadow: 2px 2px 5px white;
-}
-
-.btn-purple {
-  background-color: $purple;
-  border-style: solid;
-  border-color: $light-purple;
-  color: white;
 }
 
 .border-between > [class*='col-']:before {
