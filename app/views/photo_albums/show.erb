@@ -6,6 +6,12 @@
 
 <% @photos.each do |photo| %>
   <a href="<%= photo_path(photo) %>">
-    <%= image_tag photo.image.thumb.url %>
+    <div class="card" style="width: 18rem;">
+      <%= image_tag photo.image.thumb.url, class: 'img-fluid' %>
+
+      <div class="card-body">
+        <p class="card-text"><%= photo.description %></p>
+      </div>
+    </div>
   </a>
 <% end %>

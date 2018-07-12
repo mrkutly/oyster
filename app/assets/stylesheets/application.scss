@@ -18,6 +18,19 @@
   $purple: #7e7ebf;
   $light-purple: #cfcfea;
 
+header {
+  font-family: monospace;
+  border-bottom: 2px solid $light-purple;
+}
+
+.navbar-light {
+  color: $dark-purple;
+}
+
+.bg-light {
+  background-color: #e4dfffa1 !important;
+}
+
 .login, .sign-up{
   float: left;
   padding-left: 100px;
@@ -31,7 +44,7 @@
 .welcome-banner {
   padding: 80px;
   min-width: 800px;
-  font-family: "Courier New", Courier, monospace;
+  font-family: monospace;
   color: white;
   text-align: center;
   background-color: $purple;
