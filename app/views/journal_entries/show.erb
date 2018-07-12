@@ -12,7 +12,7 @@
     <p class="show-journal-content"><%= @journal_entry.content %></p>
   </div>
 
-  <h6><%= button_to "Edit", edit_journal_entry_path(@journal_entry), method: :get, class: "btn-purple float right-margin" %></h6>
-  <h6><%= button_to "Delete", delete_journal_entry_path(@journal_entry), method: :delete, data: { confirm: "Are you sure?" }, class: "btn-purple" %></h6>
+  <h6><%= button_to "Edit", edit_journal_entry_path(@journal_entry), method: :get, class: "btn btn-purple float right-margin" %></h6>
+  <h6><%= button_to "Delete", delete_journal_entry_path(@journal_entry), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-purple" %></h6>
 
 </div>
