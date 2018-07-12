@@ -11,6 +11,7 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       redirect_to home_path(user)
     else
+      flash[:notice] = "Incorrect Username or Password"
       redirect_to login_path
     end
   end

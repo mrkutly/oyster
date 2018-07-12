@@ -10,18 +10,24 @@
   <div class="container">
     <div class="row border-between">
 
-
       <div class="login col-md-6">
+        <% if flash[:notice] %>
+          <div class="alert flash bottom-margin">
+              <%= flash[:notice] %>
+          </div>
+        <% end %>
+
         <%= render 'sessions/login_form' %>
       </div>
 
       <div class="sign-up col-md-6">
         <% if @user.errors.any? %>
-          <ul class="alert alert-warning">
+          <div class="alert flash">
             <% @user.errors.full_messages.each do |message| %>
-              <li><%= message %></li>
+              <%= message %>
+              <br>
             <% end %>
-          </ul>
+          </div>
         <% end %>
         <%= render 'users/new_user_form' %>
       </div>
