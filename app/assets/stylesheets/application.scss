@@ -12,12 +12,12 @@
  *
  */
  // Custom bootstrap variables must be set or imported *before* bootstrap.
- @import "bootstrap";
+@import "bootstrap";
 
-  $dark-purple: #59597b;
-  $purple: #7e7ebf;
-  $light-purple: #cfcfea;
-  $light-gray: #b4b2ce4f;
+$dark-purple: #59597b;
+$purple: #7e7ebf;
+$light-purple: #cfcfea;
+$light-gray: #b4b2ce4f;
 
 header {
   border-bottom: 2px solid $light-purple;
