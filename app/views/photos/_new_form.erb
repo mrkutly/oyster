@@ -1,10 +1,16 @@
 <%= form_for @photo do |f| %>
-  <%= f.label :image %>
-  <%= f.file_field :image %>
-  <br>
-  <%= f.label :description %>
-  <%= f.text_field :description %>
-  <br>
-  <%= f.hidden_field :photo_album_id, value: @photo_album.id %>
-  <%= f.submit "Upload" %>
+  <div class="top-margin">
+    <%= f.label :image, class: "label"%>
+    <%= f.file_field :image %>
+  </div>
+
+  <div class="top-margin">
+    <%= f.label :description, class: "label" %>
+    <%= f.text_field :description %>
+  </div>
+
+  <div class="top-margin">
+    <%= f.hidden_field :photo_album_id, value: @photo_album.id %>
+    <%= f.submit "Upload", class: "btn-purple" %>
+  </div>
 <% end %>

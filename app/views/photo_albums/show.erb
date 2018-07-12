@@ -1,17 +1,34 @@
-<%= link_to "Back to Trip", trip_path(@photo_album.trip) %>
+<div class="container top-margin bottom-margin">
 
-<h2>Upload a photo:</h2>
 
-<%= render "photos/new_form" %>
+  <h6><%= link_to "Back to Trip", trip_path(@photo_album.trip), class: "purple-link" %></h6>
 
-<% @photos.each do |photo| %>
-  <a href="<%= photo_path(photo) %>">
-    <div class="card" style="width: 18rem;">
-      <%= image_tag photo.image.thumb.url, class: 'img-fluid' %>
+  <hr class="my-4">
 
-      <div class="card-body">
-        <p class="card-text"><%= photo.description %></p>
+  <div class="top-margin bottom-margin-small">
+    <h2 class="bottom-margin-small">Add a photo:</h2>
+    <%= render "photos/new_form" %>
+  </div>
+
+  <hr class="my-4">
+
+  <div class="top-margin row">
+
+    <% @photos.each do |photo| %>
+      <div class="col-lg-4">
+
+        <a href="<%= photo_path(photo) %>" class="purple-link">
+          <div class="card top-margin photo-display" style="width: 18rem;">
+            <%= image_tag photo.image.thumb.url, class: 'img-fluid' %>
+
+            <div class="card-body">
+              <p class="card-text"><%= photo.description %></p>
+            </div>
+
+          </div>
+        </a>
+
       </div>
-    </div>
-  </a>
-<% end %>
+    <% end %>
+  </div>
+</div>
