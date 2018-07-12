@@ -23,6 +23,10 @@ header {
   border-bottom: 2px solid $light-purple;
 }
 
+.navbar-light .navbar-brand {
+  color: $dark-purple
+}
+
 .navbar-light {
   color: $dark-purple;
 }
