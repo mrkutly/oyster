@@ -1,5 +1,6 @@
 class JournalEntriesController < ApplicationController
-
+  before_action :authorized
+  
   def create
     @journal_entry = JournalEntry.new(journal_entry_params)
 

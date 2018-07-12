@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
 
   # Users routes
-  resources :users, except: [:index, :new]
+  resources :users, except: [:index, :new, :destroy]
 
+  delete '/users/:id', to: 'users#destroy', as: 'delete_user'
   get '/users', to: 'sessions#new'
   get '/users/:id/welcome', to: 'users#welcome', as: 'welcome'
   get '/users/:id/home', to: 'users#home', as: 'home'
@@ -20,7 +21,7 @@ Rails.application.routes.draw do
   resources :photo_albums, only: [:show, :create]
 
   #Photo routes
-  resources :photos, only: [:new, :create, :show]
+  resources :photos, only: [:create, :show]
   delete 'photos/:id', to: 'photos#destroy', as: "delete_photo"
 
   #journal entries routes

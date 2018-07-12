@@ -1,9 +1,5 @@
 class UsersController < ApplicationController
-  before_action :authorized, except: [:new, :create, :welcome]
-
-  def new
-    @user = User.new
-  end
+  before_action :authorized, except: [:create, :welcome]
 
   def create
     @user = User.new(user_params)
@@ -26,22 +22,10 @@ class UsersController < ApplicationController
     @trips = @user.trips
   end
 
-  def show
-    set_user
-  end
-
   def destroy
-    set_user
-    @user.destroy
-  end
-
-  def edit
-    set_user
-  end
-
-  def update
-    set_user
-    #some code here to update user
+    delete_user
+    session.delete :user_id
+    redirect_to login_url
   end
 
   private
@@ -51,6 +35,15 @@ class UsersController < ApplicationController
 
   def set_user
     @user = User.find(params[:id])
+  end
+
+  def delete_user
+    set_user
+    @user.photos.destroy_all
+    @user.journal_entries.destroy_all
+    @user.photo_albums.destroy_all
+    @user.trips.destroy_all
+    @user.delete
   end
 
 end

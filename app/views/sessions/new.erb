@@ -1,28 +1,32 @@
-<div class="jumbotron welcome-banner">
-    <div class="welcome-text">
-      <h1>Welcome to Oyster</h1>
-      <p>a travel diary</p>
-    </div>
-</div>
+<div class="bottom-margin">
 
-<div class="container">
-  <div class="row border-between">
-
-
-    <div class="login col-md-6">
-      <%= render 'sessions/login_form' %>
-    </div>
-
-    <div class="sign-up col-md-6">
-      <% if @user.errors.any? %>
-        <ul>  
-          <% @user.errors.full_messages.each do |message| %>
-            <li><%= message %></li>
-          <% end %>
-        </ul>
-      <% end %>
-      <%= render 'users/new_user_form' %>
-    </div>
-
+  <div class="jumbotron welcome-banner">
+      <div class="welcome-text">
+        <h1>Welcome to Oyster</h1>
+        <p>a travel diary</p>
+      </div>
   </div>
+
+  <div class="container">
+    <div class="row border-between">
+
+
+      <div class="login col-md-6">
+        <%= render 'sessions/login_form' %>
+      </div>
+
+      <div class="sign-up col-md-6">
+        <% if @user.errors.any? %>
+          <ul>
+            <% @user.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        <% end %>
+        <%= render 'users/new_user_form' %>
+      </div>
+
+    </div>
+  </div>
+
 </div>

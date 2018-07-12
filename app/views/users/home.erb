@@ -27,7 +27,7 @@
 
     <% @trips.each do |trip| %>
       <div class="trip-listing top-margin">
-        
+
         <div class="bottom-margin-small">
           <h4><%= link_to trip.name, trip_path(trip), class: "purple-link"%></h4>
         </div>
@@ -54,4 +54,6 @@
     <% end %>
 
   <% end %>
+
+  <footer><%= button_to "Delete account", delete_user_path(@user), method: :delete, data: { confirm: "Are you sure you wish to delete your account?"}, class: "btn btn-purple"  %></footer>
 </div>

@@ -1,8 +1,5 @@
 class PhotosController < ApplicationController
-
-  def new
-    @photo = Photo.new
-  end
+  before_action :authorized
 
   def show
     set_photo

@@ -1,4 +1,6 @@
 class PhotoAlbumsController < ApplicationController
+  before_action :authorized
+  
   def show
     set_photos
     @photo = Photo.new
