@@ -17,6 +17,7 @@
   $dark-purple: #59597b;
   $purple: #7e7ebf;
   $light-purple: #cfcfea;
+  $light-gray: #b4b2ce4f;
 
 header {
   border-bottom: 2px solid $light-purple;
@@ -24,6 +25,7 @@ header {
 
 body {
     font-family: monospace;
+    background-color: $light-gray
 }
 
 
@@ -93,15 +95,19 @@ body {
 }
 
 .border-between > [class*='col-']:before {
-   background: $purple;
-   bottom: 0;
-   content: " ";
-   left: 0;
-   position: absolute;
-   width: 2px;
-   top: 0;
+  background: $purple;
+  bottom: 0;
+  content: " ";
+  left: 0;
+  position: absolute;
+  width: 2px;
+  top: 0;
 }
 
 .border-between > [class*='col-']:first-child:before {
    display: none;
+}
+
+.search-form {
+
 }
