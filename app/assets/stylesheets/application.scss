@@ -19,8 +19,16 @@
   $light-purple: #cfcfea;
 
 header {
-  font-family: monospace;
   border-bottom: 2px solid $light-purple;
+}
+
+body {
+    font-family: monospace;
+}
+
+
+.top-margin {
+  margin-top: 30px;
 }
 
 .navbar-light .navbar-brand {
