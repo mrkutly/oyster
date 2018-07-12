@@ -26,6 +26,48 @@ body {
   font-family: monospace;
 }
 
+.bg-light {
+  background-color: #e4dfffa1 !important;
+}
+
+.border-between > [class*='col-']:before {
+  background: $purple;
+  bottom: 0;
+  content: " ";
+  left: 0;
+  position: absolute;
+  width: 2px;
+  top: 0;
+}
+
+.border-between > [class*='col-']:first-child:before {
+  display: none;
+}
+
+.bottom-margin {
+  margin-bottom: 50px;
+}
+
+.bottom-margin-small {
+  margin-bottom: 30px;
+}
+
+.btn-purple {
+  background-color: $purple;
+  border-style: solid;
+  border-color: $light-purple;
+  color: white;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  height: 30px;
+  width: auto;
+}
+
+.btn-purple:hover {
+  border-color: $dark-purple;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
 .float {
   float: left;
 }
@@ -34,20 +76,32 @@ body {
   float: right;
 }
 
-.top-margin {
-  margin-top: 30px;
+.glowing {
+  text-shadow: 2px 2px 5px white;
 }
 
-.bottom-margin {
-  margin-bottom: 50px;
+.journal-content {
+  height: 300px;
+  width: 300px;
 }
 
-.navbar-light .navbar-brand {
-  color: $dark-purple
+.login {
+  margin-top: 50px;
 }
 
 .navbar-light {
   color: $dark-purple;
+}
+
+.photo-display {
+  border-style: solid;
+  border-color: $purple;
+  padding: 2px;
+}
+
+.photo-display:hover {
+  border-color: $dark-purple;
+  box-shadow: 7px 7px 10px $purple;
 }
 
 .purple-link {
@@ -60,18 +114,16 @@ body {
   text-shadow: 2px 2px 5px $purple;
 }
 
-.bg-light {
-  background-color: #e4dfffa1 !important;
+.right-margin {
+  margin-right: 20px;
 }
 
-.login, .sign-up{
-  float: left;
-  padding-left: 100px;
-  padding-right: 100px;
+.show-journal-content {
+  font-size: 1.2em;
 }
 
-.login {
-  margin-top: 50px;
+.top-margin {
+  margin-top: 30px;
 }
 
 .welcome-banner {
@@ -102,52 +154,12 @@ body {
   text-shadow: 1px 1px 40px;
 }
 
-.glowing {
-  text-shadow: 2px 2px 5px white;
+.login, .sign-up{
+  float: left;
+  padding-left: 100px;
+  padding-right: 100px;
 }
 
-.btn-purple {
-  background-color: $purple;
-  border-style: solid;
-  border-color: $light-purple;
-  color: white;
-  -webkit-transition-duration: 0.3s;
-  transition-duration: 0.3s;
-  height: 30px;
-  width: auto;
-}
-
-.btn-purple:hover {
-  border-color: $dark-purple;
-  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-}
-
-.border-between > [class*='col-']:before {
-  background: $purple;
-  bottom: 0;
-  content: " ";
-  left: 0;
-  position: absolute;
-  width: 2px;
-  top: 0;
-}
-
-.border-between > [class*='col-']:first-child:before {
-  display: none;
-}
-
-.journal-content {
-  height: 300px;
-  width: 300px;
-}
-
-.photo-display {
-  border-style: solid;
-  border-color: $purple;
-  padding: 2px;
-}
-
-.photo-display:hover {
-  border-color: $dark-purple;
-  box-shadow: 7px 7px 10px $purple;
+.navbar-light .navbar-brand {
+  color: $dark-purple
 }

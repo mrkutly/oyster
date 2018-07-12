@@ -1,7 +1,18 @@
-<%= link_to "Back to #{@trip.name}", trip_path(@trip) %>
+<div class="container top-margin bottom-margin">
 
-<h1><%= @journal_entry.title %></h1>
-<p><%= @journal_entry.content %></p>
+  <h6><%= link_to "Back to #{@trip.name}", trip_path(@trip), class: "purple-link" %></h6>
 
-<%= button_to "Delete", delete_journal_entry_path(@journal_entry), method: :delete, data: { confirm: "Are you sure?" } %>
-<%= link_to "Edit", edit_journal_entry_path(@journal_entry) %>
+  <div class="top-margin bottom-margin-small">
+    <h1><%= @journal_entry.title %></h1>
+  </div>
+
+  <hr class="my-4">
+
+  <div class="top-margin bottom-margin-small">
+    <p class="show-journal-content"><%= @journal_entry.content %></p>
+  </div>
+
+  <h6><%= button_to "Edit", edit_journal_entry_path(@journal_entry), method: :get, class: "btn-purple float right-margin" %></h6>
+  <h6><%= button_to "Delete", delete_journal_entry_path(@journal_entry), method: :delete, data: { confirm: "Are you sure?" }, class: "btn-purple" %></h6>
+
+</div>
