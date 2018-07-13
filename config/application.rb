@@ -18,7 +18,7 @@ module Oyster
 
 
     config.assets.precompile += [
-    '/assets/'  
+    'oyster.jpg'  
     ]
   end
 end
