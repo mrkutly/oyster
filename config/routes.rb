@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :users, except: [:index, :new, :destroy]
 
   delete '/users/:id', to: 'users#destroy', as: 'delete_user'
-  get '/users', to: 'sessions#new'
+  get '/users', to: 'users#home'
   get '/users/:id/welcome', to: 'users#welcome', as: 'welcome'
   get '/users/:id/home', to: 'users#home', as: 'home'
 
