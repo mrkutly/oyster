@@ -132,12 +132,20 @@ body {
 }
 
 .oyster-img-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-weight: bold;
-    text-shadow: 2px 2px 1px white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: bold;
+  text-shadow: 2px 2px 1px white;
+}
+
+.oyster-img-text-small{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-shadow: 2px 2px 1px white;
 }
 
 .photo-display {
