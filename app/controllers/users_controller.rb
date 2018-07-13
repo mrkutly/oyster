@@ -13,17 +13,18 @@ class UsersController < ApplicationController
   end
 
   def welcome
-    set_user
+    current_user
   end
 
   def home
-    set_user
+    current_user
     @trip = Trip.new
     @trips = @user.trips
   end
 
   def destroy
-    delete_user
+    current_user
+    @user.delete_account
     session.delete :user_id
     redirect_to login_url
   end
@@ -31,19 +32,6 @@ class UsersController < ApplicationController
   private
   def user_params
     params.require(:user).permit(:name, :email, :password, :password_confirmation)
-  end
-
-  def set_user
-    @user = User.find(params[:id])
-  end
-
-  def delete_user
-    set_user
-    @user.photos.destroy_all
-    @user.journal_entries.destroy_all
-    @user.photo_albums.destroy_all
-    @user.trips.destroy_all
-    @user.delete
   end
 
 end

@@ -16,4 +16,13 @@ class User < ApplicationRecord
   #validations for new users
   validates :email, uniqueness: true
   validates :password, length: { minimum: 6, maximum: 100 }
+
+  #destroys all of the users stuff and the user
+  def delete_account
+    self.photos.destroy_all
+    self.journal_entries.destroy_all
+    self.photo_albums.destroy_all
+    self.trips.destroy_all
+    self.delete
+  end
 end
