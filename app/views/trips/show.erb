@@ -7,35 +7,6 @@
 
   <hr class="my-4">
 
-  <div class="row top-margin bottom-margin-small">
-    <div class="col-lg-6">
-
-      <h3>New Journal Entry</h3>
-
-      <% if flash[:notice] %>
-        <div class="alert flash">
-            <%= flash[:notice] %>
-        </div>
-      <% end %>
-      
-      <%= render "journal_entries/new_form" %>
-    </div>
-
-    <% if !@trip.journal_entries.empty? %>
-      <div class="col-lg-6">
-
-
-        <h3 class="top-margin">Journal</h3>
-
-          <% @journal_entries.each do |journal_entry| %>
-            <h6><%= link_to journal_entry.title, journal_entry_path(journal_entry), class: "purple-link" %></h6>
-          <% end %>
-      </div>
-    <% end %>
-  </div>
-
-  <hr class="my-4">
-
   <div class="top-margin bottom-margin-small">
     <% if !@trip.photo_album.nil? %>
       <h3><%= link_to "Photo Album", photo_album_path(@photo_album), class: "purple-link" %></h3>
@@ -62,4 +33,36 @@
 
     <% end %>
   </div>
+
+  <hr class="my-4">
+
+  <div class="row top-margin bottom-margin-small">
+    <div class="col-lg-6">
+
+      <h3>New Journal Entry</h3>
+
+      <% if flash[:notice] %>
+        <div class="alert flash">
+            <%= flash[:notice] %>
+        </div>
+      <% end %>
+
+      <%= render "journal_entries/new_form" %>
+    </div>
+
+    <% if !@trip.journal_entries.empty? %>
+      <div class="col-lg-6">
+        <h3 class="top-margin">Journal</h3>
+
+          <% @journal_entries.each do |journal_entry| %>
+            <h6><%= link_to journal_entry.title, journal_entry_path(journal_entry), class: "purple-link" %></h6>
+          <% end %>
+          
+      </div>
+    <% end %>
+  </div>
+
+  <hr class="my-4">
+
+
 </div>
