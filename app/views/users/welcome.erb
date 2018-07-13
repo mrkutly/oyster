@@ -1,4 +1,9 @@
-<h1>Welcome <%= @user.name %>!</h1>
+<div class="container top-margin">
 
 
-<h3>Go to your <%= link_to "home page", home_path(@user) %> to get started</h3>
+<h1>Welcome <%= @user.name %></h1>
+
+<hr class="my-4">
+<h3>Go to your <%= link_to "home page", home_path(@user), class: "purple-link" %> to get started</h3>
+
+</div>
