@@ -1,13 +1,29 @@
 
 <div class="container top-margin">
 
-<h1><%= @user.name %></h1>
+<div class="row">
+  <div class="col-md-3"></div>
+
+  <div class="col-md-2">
+    <img src="/assets/oyster-thicc-2.jpg" alt="oyster">
+  </div>
+
+  <div class="col-md-2">
+    <h1><%= @user.name %></h1>
+  </div>
+
+  <div class="col-md-2">
+    <img src="/assets/oyster-thicc.jpg" alt="oyster">
+  </div>
+
+  <div class="col-md-3"></div>
+</div>
 
 <hr class="my-4">
 
 <div class="row">
-
-  <div class="col-md-2">
+  <div class="col-lg-2"></div>
+  <div class="col-lg-4">
     <h2>Create Trip:</h2>
 
     <% if flash[:new_trip_notice] %>
@@ -17,12 +33,7 @@
     <%= render 'trips/new_form' %>
   </div>
 
-
-  <div class="col-md-5">
-    <img src="/assets/oyster.jpg" alt="oyster">
-  </div>
-
-  <div class="col-md-5">
+  <div class="col-lg-4">
 
     <h2>Find a Trip:</h2>
 
@@ -34,18 +45,20 @@
       <%= render 'trips/search_form' %>
     </div>
   </div>
-
+  <div class="col-lg-2"></div>
 </div>
 
 <hr class="my-4">
 
   <% if !@trips.empty? %>
-    <h2>Trips:</h2>
-
+    <div class="center-text">
+      <h2>Trips:</h2>
+    </div>
+    
     <% @trips.each do |trip| %>
       <div class="trip-listing top-margin">
 
-        <div class="bottom-margin-small">
+        <div class="bottom-margin-small center-text">
           <h4><%= link_to trip.name, trip_path(trip), class: "purple-link"%></h4>
         </div>
 
