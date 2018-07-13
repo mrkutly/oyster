@@ -1,84 +1,70 @@
 
 <div class="container top-margin">
+  <h1><%= @user.name %></h1>
 
-<div class="row">
-  <div class="col-md-3"></div>
+  <hr class="my-4">
 
-  <div class="col-md-2">
-    <img src="/assets/oyster-thicc-2.jpg" alt="oyster">
-  </div>
+  <div class="row">
 
-  <div class="col-md-2">
-    <h1><%= @user.name %></h1>
-  </div>
+    <div class="col-lg-4">
+      <h2>Create Trip:</h2>
 
-  <div class="col-md-2">
-    <img src="/assets/oyster-thicc.jpg" alt="oyster">
-  </div>
+      <% if flash[:new_trip_notice] %>
+        <div class="alert flash"><%= flash[:new_trip_notice] %></div>
+      <% end %>
 
-  <div class="col-md-3"></div>
-</div>
-
-<hr class="my-4">
-
-<div class="row">
-  <div class="col-lg-2"></div>
-  <div class="col-lg-4">
-    <h2>Create Trip:</h2>
-
-    <% if flash[:new_trip_notice] %>
-      <div class="alert flash"><%= flash[:new_trip_notice] %></div>
-    <% end %>
-
-    <%= render 'trips/new_form' %>
-  </div>
-
-  <div class="col-lg-4">
-
-    <h2>Find a Trip:</h2>
-
-    <% if flash[:search_notice] %>
-      <div class="alert flash"><%= flash[:search_notice] %></div>
-    <% end %>
-
-    <div class="top-margin-x-small">
-      <%= render 'trips/search_form' %>
+      <%= render 'trips/new_form' %>
     </div>
-  </div>
-  <div class="col-lg-2"></div>
-</div>
 
-<hr class="my-4">
+    <div class="col-lg-4">
 
-  <% if !@trips.empty? %>
-    <div class="center-text">
-      <h2>Trips:</h2>
+      <h2>Find a Trip:</h2>
+
+      <% if flash[:search_notice] %>
+        <div class="alert flash"><%= flash[:search_notice] %></div>
+      <% end %>
+
+      <div class="top-margin-x-small">
+        <%= render 'trips/search_form' %>
+      </div>
     </div>
-    
-    <% @trips.each do |trip| %>
-      <div class="trip-listing top-margin">
 
-        <div class="bottom-margin-small center-text">
-          <h4><%= link_to trip.name, trip_path(trip), class: "purple-link"%></h4>
-        </div>
+  </div>
 
-        <% if !trip.photos.empty? %>
-          <div class="row bottom-margin-small">
+  <hr class="my-4">
 
-            <% trip.photos.sample(3).each do |photo| %>
-              <div class="col-md-4">
-                <%= image_tag photo.image.thumb.url, class: "photo-display" %>
-              </div>
-            <% end %>
-
-          </div>
-        <% end %>
-
-        <hr class="my-2">
+    <% if !@trips.empty? %>
+      <div class="center-text">
+        <h2>Trips:</h2>
       </div>
 
-    <% end %>
-  <% end %>
+      <% @trips.each do |trip| %>
+        <div class="trip-listing top-margin">
 
-  <footer class="delete top-margin"><%= button_to "Delete account", delete_user_path(@user), method: :delete, data: { confirm: "Are you sure you wish to delete your account?"}, class: "btn btn-purple"  %></footer>
+          <div class="bottom-margin-small center-text">
+            <h4><%= link_to trip.name, trip_path(trip), class: "purple-link"%></h4>
+          </div>
+
+          <% if !trip.photos.empty? %>
+            <div class="row bottom-margin-small">
+
+              <% trip.photos.sample(3).each do |photo| %>
+                <div class="col-md-4">
+                  <%= image_tag photo.image.thumb.url, class: "photo-display" %>
+                </div>
+              <% end %>
+
+            </div>
+          <% end %>
+
+          <hr class="my-2">
+        </div>
+
+      <% end %>
+    <% end %>
+
+    <footer class="delete top-margin"><%= button_to "Delete account", delete_user_path(@user), method: :delete, data: { confirm: "Are you sure you wish to delete your account?"}, class: "btn btn-purple"  %></footer>
+  </div>
+
+
 </div>
