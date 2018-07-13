@@ -15,8 +15,10 @@ gem 'carrierwave', '~> 1.0'
 gem 'mini_magick', '4.8.0'
 gem 'bcrypt'
 gem 'pg'
+gem 'sqlite3', '1.3.13'
 gem 'bootstrap', '~> 4.1.1'
 gem 'jquery-rails'
+gem 'taps'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -37,6 +39,7 @@ group :test do
 end
 
 group :production do
+  gem 'rails_12factor'
   gem 'pg'
 end
 
