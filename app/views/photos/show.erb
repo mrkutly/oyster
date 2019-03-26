@@ -7,9 +7,9 @@
   <div class="bottom-margin-small">
     <%= image_tag @photo.image.url, class: "photo-show photo-frame" %>
   </div>
-
-  <h5><%= @photo.description %></h5>
-
+  <div class="word-wrap">
+    <h5><%= @photo.description %></h5>
+  </div>
   <hr class="my-4">
 
   <h6><%= button_to "Delete", delete_photo_path(@photo), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-purple"  %></h6>
